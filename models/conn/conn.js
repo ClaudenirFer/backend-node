@@ -1,10 +1,13 @@
+
 const mongoose = require("mongoose");
 
-function Conn(url, porta, banco) {
+function Conn(url, user, pass, banco) {
   mongoose
     .connect(
-      `mongodb+srv://dbUser:bER65QmkPFSl6sYw@bluedb-mod3.buru4.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+      `${url},${user}`,
       {
+        user: user,
+        pass: pass,
         useNewUrlParse: true, //para q o mongoose use o novo sistema de url
         useUnifiedTopology: true, //Mecanismo de monitoramento de banco de dados
       }
