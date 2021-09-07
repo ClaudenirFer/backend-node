@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 function Conn(url, user, pass, banco) {
   mongoose
     .connect(
-      `${url},${user}`,
+      `${url}/${user}`,
       {
         user: user,
         pass: pass,
